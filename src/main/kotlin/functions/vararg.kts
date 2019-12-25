@@ -15,3 +15,5 @@ println("######################## Page 49")
 val values = intArrayOf(1, 21, 3)
 //println(max(values[0], values[1], values[2])) // SMELLY, don`t
 println(max(*values))
+
+println(max(*listOf(1,4,18,12).toIntArray()))
