@@ -10,3 +10,8 @@ fun max(vararg numbers: Int): Int {
 }
 println(max(1, 5, 2, 12, 7, 3))
 println(max(1, 5, 2))
+
+println("######################## Page 49")
+val values = intArrayOf(1, 21, 3)
+//println(max(values[0], values[1], values[2])) // SMELLY, don`t
+println(max(*values))
