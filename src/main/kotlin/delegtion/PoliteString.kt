@@ -2,6 +2,14 @@ package delegtion
 
 import kotlin.reflect.KProperty
 
+
+fun main() {
+    plainComment()
+    println("##### Polite String")
+    politeComment()
+}
+
+
 class PoliteString(var content: String) {
     operator fun getValue(thisRef: Any?, property: KProperty<*>) =
         content.replace("stupid", "s*****")
@@ -11,15 +19,9 @@ class PoliteString(var content: String) {
     }
 }
 
-
-fun main() {
-    plainComment()
-    println("##### Polite String")
-    politeComment()
-}
-
 private fun politeComment() {
-    var comment: String by PoliteString("Some nice message")
+//    var comment: String by PoliteString("Some nice message")
+    var comment: String by beignpolite("Some nice message")
     println(comment)
 
     comment = "This is stupid"
@@ -35,3 +37,6 @@ private fun plainComment() {
     println(comment)
     println("comment is of length: ${comment.length}")
 }
+
+fun beignpolite(content: String) = PoliteString(content)
+
